@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 const graphhhtp = require("express-graphql");
-app.use("/graphql", graphhhtp({}));
+const schema = require("./Schema/Schema");
+app.use("/graphql", graphhhtp({ schema }));
 app.listen(4000, () => {
   console.log("Listening on port");
 });
